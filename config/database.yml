@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: calpal_development
+  pool: 5
+  username: Tony
+  password:
+  host: localhost
