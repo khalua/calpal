@@ -1,0 +1,15 @@
+.row
+  .one.columns
+  .four.columns
+    %h1 Log in
+  .seven.columns
+.row
+  .one.columns
+  .four.columns
+    = form_tag '/login' do
+      = label_tag 'email'
+      = text_field_tag 'email', nil, :autofocus => true
+      = label_tag 'password'
+      = password_field_tag 'password'
+      = submit_tag  'Login to CalPal', :class => 'button radius'
+  .seven.columns
