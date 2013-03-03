@@ -5,7 +5,7 @@
 .row
   .one.columns
   .six.columns
-    %ul
+    %ul.meals
       - @meals.each do |meal|
         %li
           = meal.name + " --------- " + meal.description
@@ -19,14 +19,21 @@
           = text_field_tag 'name'
           = label_tag 'description'
           = text_field_tag 'description'
+          = label_tag 'foods_eaten'
+          = text_field_tag 'food_picker'
           = label_tag 'meal_date'
           = text_field_tag 'datepicker', nil, :dateFormat => 'yy-mm-dd', :name => 'meal_date'
           = label_tag 'meal_time'
           = text_field_tag 'meal_time'
-          = hidden_field_tag 'user_id'
+          = hidden_field_tag 'meal_id'
           = link_to('Cancel','#', :id => 'hide_form', :class => 'button alert radius tiny')
           = submit_tag 'Add new meal', :id => 'create_meal', :class => 'button radius tiny'
 
-
-
+#foods.reveal-modal
+  %h2 Select foods eaten
+  %p.lead Wassup
+  - @foods.each do |food|
+    = image_tag(food.image, :size => "50x50", :alt => food.id)
+  = link_to("Done", "#", :id => 'done_adding_foods', :class => 'button alert radius tiny close-reveal-modal')
+  %a.close-reveal-modal &#215;
 
