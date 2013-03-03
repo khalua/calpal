@@ -3,8 +3,8 @@ class CreateMealsTable < ActiveRecord::Migration
     create_table :meals do |t|
       t.string  :name
       t.text  :description
-      t.date  :eat_date
-      t.time  :eat_time
+      t.date  :meal_date
+      t.time  :meal_time
       t.integer :user_id
       t.timestamps
     end

@@ -4,5 +4,6 @@
 //= require 'foundation/javascripts/foundation.min.js'
 //= require 'foundation/javascripts/app.js'
 //= require 'underscore-min.js'
+//= require 'jquery-ui-1.10.1.custom.min.js'
 //= require 'minicolors/jquery.minicolors.js'
 //= require 'calpal'

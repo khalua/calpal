@@ -2,5 +2,6 @@
  *= require 'foundation/stylesheets/foundation.css'
  *= require 'foundation/stylesheets/app.css'
  *= require 'minicolors/jquery.minicolors.css'
+ *= require 'jquery-ui/css/jquery-ui-1.10.1.custom.min.css'
  *= require 'calpal'
  */

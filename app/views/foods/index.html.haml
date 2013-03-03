@@ -8,5 +8,5 @@
     %ul
       - @foods.each do |food|
         %li
-          = food.name
+          = link_to(food.name, food)
   .five.columns

@@ -3,7 +3,7 @@ class CreateFoodsTable < ActiveRecord::Migration
     create_table :foods do |t|
       t.string  :name
       t.integer :calories
-      t.string  :image
+      t.text  :image
       t.timestamps
     end
   end

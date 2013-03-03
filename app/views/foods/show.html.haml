@@ -1,0 +1,9 @@
+.row
+  .one.columns
+  .six.columns
+    %h2= @food.name
+    %br
+    = image_tag(@food.image)
+    %br
+    %h3== #{@food.calories} calories
+  .five.columns

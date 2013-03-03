@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  name       :string(255)
 #  calories   :integer
+#  image      :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
