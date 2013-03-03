@@ -5,6 +5,7 @@ class CreateMealsTable < ActiveRecord::Migration
       t.text  :description
       t.date  :eat_date
       t.time  :eat_time
+      t.integer :user_id
       t.timestamps
     end
   end

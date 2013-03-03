@@ -14,6 +14,8 @@
 class User < ActiveRecord::Base
   has_secure_password
   attr_accessible :name, :email, :password, :password_confirmation, :target
+  has_many  :meals#, :inverse_of => :users
+  has_many  :foods, :through => :meals
   validates :name, :email, :uniqueness => true, :presence => true
   validates :target, :presence => true
 end

@@ -12,5 +12,7 @@
 #
 
 class Meal < ActiveRecord::Base
-
+  attr_accessible :name, :description, :eat_date, :eat_time
+  has_and_belongs_to_many :foods
+  belongs_to :user, :inverse_of => :meals
 end

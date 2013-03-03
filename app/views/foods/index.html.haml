@@ -1,0 +1,12 @@
+.row
+  .one.columns
+  .eleven.columns
+    %h1 Foods
+.row
+  .one.columns
+  .six.columns
+    %ul
+      - @foods.each do |food|
+        %li
+          = food.name
+  .five.columns

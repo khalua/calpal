@@ -1,7 +1,7 @@
 Calpal::Application.routes.draw do
   root :to => 'welcome#index'
 
-  resources :users
+  resources :users, :foods, :meals
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

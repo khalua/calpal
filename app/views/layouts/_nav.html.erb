@@ -11,6 +11,9 @@
         <% if !@auth.present? %>
           <li><%= link_to("Log in", login_path) %></li>
           <li><%= link_to("Create Account", new_user_path) %></li>
+        <% else %>
+          <li><%= link_to('Foods', foods_path) %></li>
+          <li><%= link_to('New Meal', new_meal_path) %></li>
         <% end %>
       </ul>
 
