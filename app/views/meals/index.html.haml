@@ -4,7 +4,6 @@
     %h1 Your meals
 .row
   .one.columns
-    #meal_name
   .six.columns
     %table.meals
       %thead
@@ -18,7 +17,7 @@
           %tr
             %td= meal.meal_date
             %td= meal.name
-            %td= meal.foods.map {|x| image_tag(x.image.to_s, :size => '50x50') }.join(" ").html_safe
+            %td{:class => 'food_thumbnail'}= meal.foods.map {|x| image_tag(x.image.to_s, :size => '50x50') }.join(" ").html_safe
             %td= meal.total_cals
   .five.columns
     .controls

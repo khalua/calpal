@@ -53,12 +53,39 @@ function display_meal(message)
 
 function add_meal_to_table(meal_date, name,food_images, total_cals)
 {
+  var tr = $('<tr>');
+  var td1 = $('<td>');
+  var td2 = $('<td>');
+  var td3 = $('<td>');
+  var td4 = $('<td>');
 
-  $('.meals tr').last().after('<tr><td>'+ meal_date +'</td><td>'+ name +'</td><td>'+ food_images +'</td><td>'+ total_cals +'</td></tr>');
+  td1.text(meal_date);
+  td2.text(name);
+  td3.text(thumbnails(food_images));
+  td4.text(total_cals);
 
+  tr.append([td1, td2, td3, td4]);
+
+  $('.meals tr').last().after(tr);
+
+  // $('.meals tr').last().after('<tr><td>'+ meal_date +'</td><td>'+ name +'</td><td class="food_thumbnail">'+ thumbnails(food_images) +'</td><td>'+ total_cals +'</td></tr>');
 
   hide_form();
 }
+
+function thumbnails(images)
+{
+  _.each(images, create_html_for_images );
+}
+
+function create_html_for_images(i) {
+  var image = $('<img>');
+  image.addClass('food_thumbnail');
+  image.attr('src', i);
+  return image;
+  //$('tr').last().children().slice(1).after(img);
+}
+
 
 function show_foods()
 {
