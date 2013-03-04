@@ -61,7 +61,7 @@ function add_meal_to_table(meal_date, name,food_images, total_cals)
 
   td1.text(meal_date);
   td2.text(name);
-  td3.text(thumbnails(food_images));
+  td3.append(thumbnails(food_images));
   td4.text(total_cals);
 
   tr.append([td1, td2, td3, td4]);
@@ -75,7 +75,9 @@ function add_meal_to_table(meal_date, name,food_images, total_cals)
 
 function thumbnails(images)
 {
-  _.each(images, create_html_for_images );
+  //_.each(images, create_html_for_images );
+  var thumbnails = _.map(images, create_html_for_images );
+  return thumbnails;
 }
 
 function create_html_for_images(i) {
