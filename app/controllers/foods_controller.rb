@@ -2,7 +2,7 @@ class FoodsController < ApplicationController
   before_filter :check_if_logged_in
 
   def index
-    @foods = Food.all
+    @foods = @auth.foods
   end
 
   def show

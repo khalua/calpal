@@ -17,7 +17,6 @@ class MealsController < ApplicationController
   end
 
   def create
-    # @meal = Meal.new(params[:meal]) -- non-ajax
     id = params[:id]
     name = params[:name]
     description = params[:description]
@@ -31,7 +30,8 @@ class MealsController < ApplicationController
       food = Food.find(f.to_i)
       meal.foods << food
     end
-    render :json => meal
+
+    render :json => meal.to_json(:methods => [:total_cals, :food_images])
   end
 
   def update

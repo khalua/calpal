@@ -35,7 +35,7 @@ function create_meal()
       dataType: 'json',
       type: "POST",
       url: "/meals",
-      data: { id:meal_id, authenticity_token: token, name:name, description:description, food_picker:food_picker, meal_date:meal_date, meal_time:meal_time }
+      data: { id:meal_id, authenticity_token: token, name:name, description:description, food_picker:food_picker, meal_date:meal_date, meal_time:meal_time}
     }).done(display_meal);
 
     return false;
@@ -43,16 +43,20 @@ function create_meal()
 
 function display_meal(message)
 {
+  var meal_date = message.meal_date;
   var name = message.name;
-  var description = message.description;
-  append_meal(name);
+  var food_images = message.food_images;
+  var total_cals = message.total_cals;
+  add_meal_to_table(meal_date, name, food_images, total_cals);
+  console.log("message :" + message);
 }
 
-function append_meal(name, description)
+function add_meal_to_table(meal_date, name,food_images, total_cals)
 {
-  var li = $('<li>').append(name);
-  li.append(description);
-  $('.meals li').last().append(li);
+
+  $('.meals tr').last().after('<tr><td>'+ meal_date +'</td><td>'+ name +'</td><td>'+ food_images +'</td><td>'+ total_cals +'</td></tr>');
+
+
   hide_form();
 }
 

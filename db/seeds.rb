@@ -15,7 +15,7 @@ f5 = Food.create(:name => 'Chicken breast', :calories => 250, :image => 'http://
 f6 = Food.create(:name => 'Toast with avocado', :calories => 125, :image => 'http://healthyaperture.com/recipes/avocado-toast-300x300.jpg' )
 
 m1 = Meal.create(:name => 'Lunch', :description => 'Monday lunch', :meal_date => '2012/02/28', :meal_time => '12:00')
-m2 = Meal.create(:name => 'Dinner', :description => 'At The Harrison restaurant', :meal_date => '2012/03/06', :meal_time => '19:00')
+m2 = Meal.create(:name => 'Pig out!', :description => 'At The Harrison restaurant', :meal_date => '2012/03/06', :meal_time => '19:00')
 m3 = Meal.create(:name => 'Breakfast', :description => 'Post exercise', :meal_date => '2012/03/06', :meal_time => '08:00')
 m4 = Meal.create(:name => 'Snack1', :description => 'early afternoon', :meal_date => '2012/03/06', :meal_time => '14:00')
 
@@ -27,6 +27,6 @@ u3.meals << m4
 u4.meals << m4
 
 m1.foods << f2
-m2.foods << f4 << f5
+m2.foods = [f1,f2,f3,f4,f5,f6]
 m3.foods << f6
 m4.foods << f1
