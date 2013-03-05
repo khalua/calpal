@@ -68,8 +68,6 @@ function add_meal_to_table(meal_date, name,food_images, total_cals)
 
   $('.meals tr').last().after(tr);
 
-  // $('.meals tr').last().after('<tr><td>'+ meal_date +'</td><td>'+ name +'</td><td class="food_thumbnail">'+ thumbnails(food_images) +'</td><td>'+ total_cals +'</td></tr>');
-
   hide_form();
 }
 
@@ -85,7 +83,6 @@ function create_html_for_images(i) {
   image.addClass('food_thumbnail');
   image.attr('src', i);
   return image;
-  //$('tr').last().children().slice(1).after(img);
 }
 
 
